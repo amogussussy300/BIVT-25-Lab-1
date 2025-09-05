@@ -140,10 +140,10 @@ namespace Lab1
             // code here
             bool Task6(double sqar, double circar)
             {
-                double sqside = Math.Sqrt(sqar);
-                double radius = sqar / 2;
+                double diagonal = Math.Sqrt(sqar + sqar);
+                double radius = diagonal / 2;
 
-                if (Math.PI * (Math.Pow(radius, 2)) == circar)
+                if (Math.PI * (Math.Pow(radius, 2)) <= circar)
                 {
                     return true;
                 }
@@ -165,7 +165,50 @@ namespace Lab1
             int answer = 0;
 
             // code here
+            int Task7(bool s, bool t, bool f)
+            {
 
+                if (s)
+                {
+                    if (t)
+                    {
+                        answer = 6;
+                    }
+                    else
+                    {
+                        if (f)
+                        {
+                            answer = 10;
+                        }
+                        else
+                        {
+                            answer = 2;
+                        }
+                    }
+                }
+                else
+                {
+                    if (t)
+                    {
+                        answer = 3;
+                    }
+                    else
+                    {
+                        if (f)
+                        {
+                            answer = 5;
+                        }
+                        else
+                        {
+                            answer = 1;
+                        }
+                    }
+                }
+
+                return answer;
+            }
+
+            Task7(s, t, f);
             // end
 
             return answer;
@@ -176,7 +219,73 @@ namespace Lab1
             const int bank = 10000;
 
             // code here
-            
+            bool Task8(int y, int studs, int pay)
+            {
+
+                if (y % 4 == 0)
+                {
+                    if (y % 100 == 0)
+                    {
+                        if (y % 400 == 0)
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            //
+                            int auroras = 0;
+
+                            if (studs % 7 == 0)
+                            {
+                                auroras = studs / 7;
+                            }
+                            else
+                            {
+                                auroras = (studs / 7) + 1;
+                            }
+
+                            if (((auroras * pay) + (studs * 5)) <= 10000)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    //
+                    int auroras = 0;
+
+                    if (studs % 7 == 0)
+                    {
+                        auroras = studs / 7;
+                    }
+                    else
+                    {
+                        auroras = (studs / 7) + 1;
+                    }
+
+                    if (((auroras * pay) + (studs * 5)) <= 10000)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+            }
+
+            answer = Task8(year, pupils, salary);
             // end
 
             return answer;
